@@ -106,7 +106,7 @@ exports.postAddTime = (req, res) => {
 
 //* Show Time
 exports.getShowTime = (req, res) => {
-	const HourCost = 0;
+	const HourCost = 42380;
 	getDataFromFile((times) => {
 		const totalHourse = TotalHourse(times);
 

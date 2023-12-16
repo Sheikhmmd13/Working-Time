@@ -23,21 +23,25 @@
                     <button class="delete" hidden>Delete</button> -->
                 </li>
             </div>
-            <% for(const time of Times){ %>
-                <div class="row">
-                    <li><%= time.Date %></li>
-                    <li class="start"><%= time.Etner %></li>
-                    <li class="exit"><%= time.Exist %></li>
-                    <li><%= time.total %></li>
-                    <li>
-                        <!-- <a class="edit" type="submit" href="/<%= time.id %>">Edit</a> -->
-                        <form action="/time-delete"  method="POST">
-                            <input type="text" name="id" value="<%= time.id %>" hidden>
-                            <button class="delete" type="submit">Delete</button>
-                        </form>
-                    </li>
-                </div>
-            <% } %>
+            <%if(Times.length > 0) {%>
+                <% for(const time of Times){ %>
+                    <div class="row">
+                        <li><%= time.Date %></li>
+                        <li class="start"><%= time.Etner %></li>
+                        <li class="exit"><%= time.Exist %></li>
+                        <li><%= time.total %></li>
+                        <li>
+                            <!-- <a class="edit" type="submit" href="/<%= time.id %>">Edit</a> -->
+                            <form action="/time-delete"  method="POST">
+                                <input type="text" name="id" value="<%= time.id %>" hidden>
+                                <button class="delete" type="submit">Delete</button>
+                            </form>
+                        </li>
+                    </div>
+                <% } %>
+            <%} else {%>
+                <h2 style="color: white">Nothing to show</h2>
+            <%}%>
         </ul>
         <a class="add" href="/add">+</a>
     </div>
