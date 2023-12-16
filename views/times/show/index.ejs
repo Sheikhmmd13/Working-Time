@@ -1,0 +1,45 @@
+<%- include('../.././includes/head.ejs') %>
+<body>
+    <div class="container">
+        <div class="title">
+            <div class="info">
+                <h2>TOTAL Hourse</h2>
+                <span><%= totalHours %> Hourse</span>
+            </div>
+            <div class="info">
+                <h2>TOTAL INCOME</h2>
+                <span><%= income %> Tom</span>
+            </div>
+        </div>
+        <ul>
+            <div class="row title">
+                <li>Date</li>
+                <li>Enter</li>
+                <li>Exist</li>
+                <li>Total</li>
+                <li>
+                    #
+                    <!-- <button class="edit" hidden>Edit</button>
+                    <button class="delete" hidden>Delete</button> -->
+                </li>
+            </div>
+            <% for(const time of Times){ %>
+                <div class="row">
+                    <li><%= time.Date %></li>
+                    <li class="start"><%= time.Etner %></li>
+                    <li class="exit"><%= time.Exist %></li>
+                    <li><%= time.total %></li>
+                    <li>
+                        <!-- <a class="edit" type="submit" href="/<%= time.id %>">Edit</a> -->
+                        <form action="/time-delete"  method="POST">
+                            <input type="text" name="id" value="<%= time.id %>" hidden>
+                            <button class="delete" type="submit">Delete</button>
+                        </form>
+                    </li>
+                </div>
+            <% } %>
+        </ul>
+        <a class="add" href="/add">+</a>
+    </div>
+</body>
+<%- include('../.././includes/end.ejs') %>

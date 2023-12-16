@@ -1,0 +1,18 @@
+<%- include('../.././includes/head.ejs') %>
+<form action="/add" method="POST" class="add">
+        <h2>Edit <span>Time</span></h2>
+        <div class="form-group">
+            <input type="text" id="date" placeholder="Date" name="date" value=<%= Time.Date %> >
+        </div>
+        <div class="times-field">
+            <div class="form-group time">
+                <input type="time" id="Enter" placeholder="Enter" name="enter" value=<%= Time.Etner %> >
+            </div>
+            <div class="form-group time">
+                <input type="time" id="Exist" placeholder="Exit" name="exist" value=<%= Time.Exist %> >
+            </div>
+        </div>
+        <input type="text" name="id" value="<%= Time.id %>" hidden>
+        <input type="submit" value="Submit">
+    </form>
+<%- include('../.././includes/end.ejs') %>

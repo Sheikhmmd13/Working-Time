@@ -1,0 +1,17 @@
+<%- include('../.././includes/head.ejs') %>
+<form action="/add" method="POST" class="add">
+        <h2>Add <span>Time</span></h2>
+        <div class="form-group">
+            <input type="text" id="date" placeholder="Date" name="date" required>
+        </div>
+        <div class="times-field">
+            <div class="form-group time">
+                <input type="time" id="Enter" placeholder="Enter" name="enter" required>
+            </div>
+            <div class="form-group time">
+                <input type="time" id="Exist" placeholder="Exit" name="exist" required>
+            </div>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+<%- include('../.././includes/end.ejs') %>

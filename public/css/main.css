@@ -1,0 +1,350 @@
+:root {
+    --background-color: #1b1b1f;
+    --gray: #3d3c40;
+    --gray-light: #555459;
+    --gray-dark: #313033;
+    --text-gray: #9794a1;
+    --purple: #6562fc;
+    --green: #58d6bf;
+    --blue: #50c0ff;
+    --red: #ff614b;
+    --orange: #fa9e80;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+    font-family: 'Poppins';
+}
+
+body {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    background-color: var(--background-color);
+}
+
+.container {
+    width: 60%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.title {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.title .info {
+    text-align: center;
+    color: var(--white)
+}
+
+.title .info span {
+    color: var(--purple)
+}
+
+a {
+    font-size: 13px;
+}
+
+/** Add Icon */
+a.add {
+    width: 40px;
+    height: 40px;
+
+    text-decoration: none;
+    font-size: 30px;
+    border-radius: 50%;
+    color: var(--text-gray);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all .3s linear;
+    background: var(--gray-dark);
+}
+
+@keyframes myAnim {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+a.add:hover {
+    animation: myAnim 1s ease 0s 1 normal forwards;
+}
+
+/** Show Times */
+ul {
+    width: 100%;
+    margin-inline: auto;
+
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.row {
+    width: 100%;
+
+    border-radius: 25px;
+
+    padding-block: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--gray-dark);
+
+    box-shadow: inset 0px -1px 2px var(--gray-light);
+}
+
+li {
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+    color: var(--white)
+}
+
+li form {
+    width: 35%;
+}
+
+li a {
+    text-decoration: none;
+    width: 35% !important;
+}
+
+.row.title {
+    width: 100%;
+
+    font-size: 13px;
+    border-radius: 25px;
+    padding-block: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.row.title li {
+    color: var(--text-gray)
+}
+
+.row li.start {
+    color: var(--green)
+}
+
+.row li.exit {
+    color: var(--orange)
+}
+
+.row li:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.row li:last-child .edit {
+    width: 100%;
+    padding-block: .65rem;
+
+    color: var(--text-gray);
+    border: 1px solid var(--text-gray);
+    border-radius: 25px;
+
+    cursor: pointer;
+    transition: all .15s linear;
+
+    cursor: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.row li:last-child .edit:hover {
+    color: var(--white);
+    border-color: var(--white);
+    background-color: var(--gray-dark);
+}
+
+.row li:last-child .delete {
+    width: 100%;
+    padding-block: .65rem;
+
+    color: var(--text-gray);
+    border: 1px solid var(--text-gray);
+    border-radius: 25px;
+
+    cursor: pointer;
+    transition: all .15s linear;
+
+    cursor: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.row li:last-child .delete:hover {
+    color: var(--white);
+    border-color: var(--white);
+    background-color: var(--gray-dark);
+}
+
+.cursor {
+    width: 5px;
+    height: 5px;
+    background: white;
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    outline: 1px solid white;
+}
+
+.cursor,
+.cursor-outline {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: 50%;
+    pointer-events: none;
+
+}
+
+
+form.add {
+    width: 25%;
+    height: 55%;
+
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    border-radius: 25px;
+    border: 1px solid var(--gray);
+}
+
+form.add h2 {
+    font-size: 35px;
+    color: var(--white);
+    text-align: center;
+}
+
+form.add h2 span {
+    color: var(--purple);
+}
+
+form.add .form-group {
+    width: 100%;
+
+    padding: 1rem .2rem;
+    border-radius: 25px;
+    color: var(--text-gray);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--gray-dark);
+}
+
+form.add .form-group input {
+    width: 80%;
+    margin-inline: auto;
+
+    border: none;
+    color: var(--text-gray);
+    background: none;
+    cursor: none;
+}
+
+form.add .form-group input:focus-visible {
+    cursor: none;
+    outline: none
+}
+
+/** input tyep time */
+form.add .times-field {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+form.add .form-group.time {
+    display: flex;
+    flex-direction: column;
+}
+
+form.add .form-group.time:nth-child(1) {
+    box-shadow: 0px 1px 1px var(--green);
+}
+
+form.add .form-group.time:nth-child(2) {
+    box-shadow: 0px 1px 1px var(--red);
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+    position: absolute;
+}
+
+/** input type submit */
+input[type="submit"] {
+    width: 100%;
+
+    position: relative;
+    color: var(--text-gray);
+    padding-block: .6rem;
+    border: 1px solid var(--text-gray);
+    border-radius: 35px;
+
+    background-color: transparent;
+    transition: all .3s linear;
+}
+
+input[type="submit"]:hover {
+    color: var(--white);
+    border-color: var(--gray-light);
+    background-color: var(--gray-light);
+}
